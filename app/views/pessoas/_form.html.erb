@@ -1,0 +1,68 @@
+<%= form_with(model: pessoa) do |form| %>
+  <% if pessoa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
+
+      <ul>
+        <% pessoa.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<center>
+  <fieldset>
+    <div class="field">
+      <%= form.label :Nome %>
+        <%= form.text_field :Nome, required:"" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :Gênero %>
+      <%= form.select :genero, [[""], ["Masculino"], ["Feminino"]] %>
+    </div>
+
+    <div class="field">
+      <%= form.label :data_de_nascimento%>
+      <input id="date_field" type="date" >
+    </div>
+
+    <div class="field">
+      <%= form.label :CPF %>
+      <%= form.text_field :CPF, placeholder:'123.456.789-00', title:"Digite um CPF no formato: xxx.xxx.xxx-xx", required:"" %>
+      <input type="text" name="CPF" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
+    </div>
+
+    <div class="field">
+      <%= form.label :Telefone %>
+      <%= form.text_field :Telefone, placeholder:'(12) 91234-5678', pattern:"\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$", required:"" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :Email %>
+      <%= form.email_field :Email, placeholder:'e-mail....@mail.com' , required:""%>
+    </div>
+
+    <div class="field">
+      <%= form.label :Endereço %>
+      <%= form.text_field :Endereco, required:"" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :Cidade %>
+      <%= form.text_field :Cidade, required:"" %>
+    </div>
+
+
+    <div class="field">
+      <%= form.label :Estado %>
+      <%= form.select :Estado, [["---", "---"], ["Acre", "AC"], ["Alagoas", "AL"], ["Amapá", "AP"], ["Amazonas", "AM"], ["Bahia", "BA"], ["Ceará", "CE"], ["Espírito Santo", "ES"], ["Goiás", "GO"], ["Maranhão", "MA"], ["Mato Grosso", "MT"], ["Mato Grosso do Sul", "MS"], ["Minas Gerais", "MG"], ["Pará", "PA"], ["Paraíba", "PB"], ["Paraná", "PR"], ["Pernambuco", "PE"], ["Piauí", "PI"], ["Rio de Janeiro", "RJ"], ["Rio Grande do Norte", "RN"], ["Rio Grande do Sul", "RS"], ["Rondônia", "RO"], ["Roraima", "RR"], ["Santa Catarina", "SC"], ["São Paulo", "SP"], ["Sergipe", "SE"], ["Tocantins", "TO"], ["Distrito Federal", "DF"]] %>
+    </div>
+    
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+    </center>
+  </fieldset>
+<% end %>
+

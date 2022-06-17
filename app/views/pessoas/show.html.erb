@@ -1,0 +1,53 @@
+<center>
+<fieldset>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @pessoa.Nome %>
+</p>
+
+<p>
+  <strong>Gênero:</strong>
+  <%= @pessoa.genero %>
+</p>
+
+<p>
+  <strong>Data de nascimento:</strong>
+  <%= @pessoa.data_de_nascimento %>
+</p>
+
+<p>
+  <strong>CPF:</strong>
+  <%= @pessoa.CPF %>
+</p>
+
+<p>
+  <strong>Telefone(com DDD):</strong>
+  <%= @pessoa.Telefone %>
+</p>
+
+<p>
+  <strong>E-mail:</strong>
+  <%= @pessoa.Email %>
+</p>
+
+<p>
+  <strong>Endereço:</strong>
+  <%= @pessoa.Endereco %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @pessoa.Cidade %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @pessoa.Estado %>
+</p>
+
+<%= link_to 'Editar', edit_pessoa_path(@pessoa) %> |
+<%= link_to 'Voltar', pessoas_path %>
+</fieldset>
+</center>

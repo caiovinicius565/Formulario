@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+  <center><h1>Confirmação de Dados</h1></center>
+
+<center>
+  <table border="3">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Gênero</th>
+        <th>Data de Nascimento</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+        <th>E-mail</th>
+        <th>Endereço</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @pessoas.each do |pessoa| %>
+        <tr>
+          <td><%= pessoa.Nome %></td>
+          <td><%= pessoa.genero %></td>
+          <td><%= pessoa.data_de_nascimento %></td>
+          <td><%= pessoa.CPF %></td>
+          <td><%= pessoa.Telefone %></td>
+          <td><%= pessoa.Email %></td>
+          <td><%= pessoa.Endereco %></td>
+          <td><%= pessoa.Cidade %></td>
+          <td><%= pessoa.Estado %></td>
+          <td><%= link_to 'Mostrar', pessoa %></td>
+          <td><%= link_to 'Editar', edit_pessoa_path(pessoa) %></td>
+          <td><%= link_to 'Detelar', pessoa, method: :delete, data: { confirm: 'Deseja excluir este registro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <button>
+    <%= link_to 'Preencha o formulário', new_pessoa_path %>
+  </button>
+</center>
